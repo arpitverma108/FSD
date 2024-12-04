@@ -1,37 +1,35 @@
-function validateForm() {
-    const name = document.getElementById("name").value.trim();
-    const email = document.getElementById("email").value.trim();
-    const password = document.getElementById("password").value.trim();
-  
-    if (name === "") {
-      alert("Name is required.");
-      return false;
-    }
-  
-    if (email === "") {
-      alert("Email is required.");
-      return false;
-    } else if (!validateEmail(email)) {
-      alert("Please enter a valid email.");
-      return false;
-    }
-  
-    if (password === "") {
-      alert("Password is required.");
-      return false;
-    } else if (password.length < 6) {
-      alert("Password must be at least 6 characters.");
-      return false;
-    }
-  
-    // If all validations pass
-    alert("Form submitted successfully!");
-    return true;
-  }
-  
-  // Email validation helper function
-  function validateEmail(email) {
-    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return re.test(email);
-  }
-  
+console.log("hello");
+
+const parent=document.getElementById("root");
+console.dir(parent);
+
+const root= ReactDOM.createRoot(parent);
+
+//const h2 = React.createElement("h2",{style:{color:'cyan'}},"ABES engeneering college");
+//const l1=React.createElement("li",{},"orange");
+//const l2=React.createElement("li",{},"Mango");
+//const ul=React.createElement("ul",{style:{backgroundColor:'cyan'}},l1,l2);
+
+//root.render(ul);
+
+//JSX
+
+const h2=<h2>HELLO WORLD</h2>
+const l1=<li>ORANGE</li>;
+const l2=<li>Mango</li>;
+const ul=<ul style={{color:'red'}}>{l1}{l2}</ul>;
+
+const container=(
+
+<div style={{backgroundColor :'brown'}}>
+    {h2}
+    <div>
+        {ul}
+    </div>
+
+</div>
+
+
+)
+
+root.render(container);
